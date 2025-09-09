@@ -47,7 +47,14 @@ namespace Lab1
             double answer = 0;
 
             // code here
-            answer = Math.Max(Math.Abs(d), Math.Abs(f));
+            if (Math.Abs(d) <= Math.Abs(f))
+            {
+                answer = d;
+            }
+            else
+            {
+                answer = f;
+            }
             // end
 
             return answer;
@@ -72,7 +79,7 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            if (Math.Pow(x, 2) + Math.Pow(y, 2) - Math.Pow(r, 2) < Math.Pow(10, -6))
+            if ( ( Math.Abs((x*x + y*y - r*r))  <= Math.Pow(10,-4) ) ||   (Math.Abs(x*x + y*y+r*r)<= r*r*Math.Pow(10,-6)))
             {
                 answer = true;
             }
@@ -114,13 +121,9 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            if (L <= 30 && (T >= 5 || M >= 5) && M % 2 == 0)
+            if (L <= 30 && (T + M >=5 ) && M % 2 == 0)
             {
                 answer = true;
-            }
-            else
-            {
-                answer = false;
             }
             // end
 
@@ -129,5 +132,4 @@ namespace Lab1
     }
 
 }
-
 
